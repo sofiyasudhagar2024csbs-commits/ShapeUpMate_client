@@ -16,7 +16,7 @@ const useAuth = () => {
 
   const verifyToken = async (token) => {
     try {
-      const response = await fetch('http://localhost:5001/api/auth/verify', {
+      const response = await fetch('https://shapeupmate-server.onrender.com/api/auth/verify', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -38,7 +38,7 @@ const useAuth = () => {
 
   const loginUser = async (email, password) => {
     try {
-      const response = await fetch('http://localhost:5001/api/auth/login', {
+      const response = await fetch('https://shapeupmate-server.onrender.com/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const useAuth = () => {
 
   const signupUser = async (userData) => {
     try {
-      const response = await fetch('http://localhost:5001/api/auth/signup', {
+      const response = await fetch('https://shapeupmate-server.onrender.com/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

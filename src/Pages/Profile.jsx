@@ -63,7 +63,7 @@ const Profile = ({ user, onLogout }) => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.put('http://localhost:5001/api/auth/change-password', {
+      await axios.put('https://shapeupmate-server.onrender.com/api/auth/change-password', {
         currentPassword: passwordData.currentPassword,
         newPassword: passwordData.newPassword
       }, {
@@ -82,8 +82,8 @@ const Profile = ({ user, onLogout }) => {
     try {
       const token = localStorage.getItem('token');
       const [mealsRes, workoutsRes] = await Promise.all([
-        fetch('http://localhost:5001/api/meals', { headers: { Authorization: `Bearer ${token}` } }),
-        fetch('http://localhost:5001/api/workouts', { headers: { Authorization: `Bearer ${token}` } })
+        fetch('https://shapeupmate-server.onrender.com/api/meals', { headers: { Authorization: `Bearer ${token}` } }),
+        fetch('https://shapeupmate-server.onrender.com/api/workouts', { headers: { Authorization: `Bearer ${token}` } })
       ]);
 
       const mealsData = await mealsRes.json();
