@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import MealForm from '../Components/MealForm';
-import MealTypeSection from '../Components/MealTypeSection';
-import ProgressBar from '../Components/ProgressBar';
-import Toast from '../Components/Toast';
-import DateTimeHeader from '../Components/DateTimeHeader';
-import WeekNavigation from '../Components/WeekNavigation';
+import MealForm from '../components/mealForm';
+import MealTypeSection from '../components/mealTypeSection';
+import ProgressBar from '../components/progressBar';
+import Toast from '../components/Toast';
+import DateTimeHeader from '../components/dateTimeHeader';
+import WeekNavigation from '../components/weekNavigation';
 import { meals } from '../services/api';
 
 const Meals = ({ user }) => {

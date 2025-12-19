@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../Components/Navbar';
-import MealForm from '../Components/MealForm';
+import Navbar from '../components/navbar';
+import MealForm from '../components/mealForm';
 import MealList from '../Components/MealList';
 import StatsCard from '../Components/StatsCard';
-import ProgressBar from '../Components/ProgressBar';
-import Toast from '../Components/Toast';
+import ProgressBar from '../components/progressBar';
+import Toast from '../components/Toast';
 import { meals } from '../services/api';
 
 const Dashboard = ({ user, onLogout }) => {

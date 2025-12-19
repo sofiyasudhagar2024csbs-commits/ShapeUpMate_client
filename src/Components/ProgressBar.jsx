@@ -1,19 +1,25 @@
 const ProgressBar = ({ current, goal, label }) => {
   const percentage = Math.min((current / goal) * 100, 100);
-  
+
   return (
-    <div className="fade-in">
+    <div style={{ marginBottom: '1rem' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-        <span style={{ fontSize: '0.9rem', fontWeight: '500' }}>{label}</span>
-        <span style={{ fontSize: '0.9rem', color: '#718096' }}>
-          {current}/{goal}
-        </span>
+        <span>{label}</span>
+        <span>{current} / {goal}</span>
       </div>
-      <div className="progress-container">
-        <div 
-          className="progress-bar" 
-          style={{ width: `${percentage}%` }}
-        ></div>
+      <div style={{
+        width: '100%',
+        height: '8px',
+        backgroundColor: 'rgba(139, 92, 246, 0.2)',
+        borderRadius: '4px',
+        overflow: 'hidden'
+      }}>
+        <div style={{
+          width: `${percentage}%`,
+          height: '100%',
+          background: 'linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%)',
+          transition: 'width 0.3s ease'
+        }} />
       </div>
     </div>
   );

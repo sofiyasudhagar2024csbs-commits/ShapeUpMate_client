@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { meals, workouts } from '../services/api';
-import TrainerDashboard from '../Components/TrainerDashboard';
-import UserDashboard from '../Components/UserDashboard';
+
 
 const Home = ({ user }) => {
   const [todayStats, setTodayStats] = useState({
@@ -56,7 +55,10 @@ const Home = ({ user }) => {
             <a href="/guidance" className="btn btn-secondary">Create Plans</a>
           </div>
         </div>
-        <TrainerDashboard />
+        <div className="card">
+          <h3>Trainer Dashboard</h3>
+          <p>Manage your clients and create workout plans.</p>
+        </div>
       </div>
     );
   }
@@ -73,7 +75,10 @@ const Home = ({ user }) => {
             <a href="/guidance" className="btn btn-secondary">View Guidance</a>
           </div>
         </div>
-        <UserDashboard user={user} />
+        <div className="card">
+          <h3>User Dashboard</h3>
+          <p>Track your fitness progress and goals.</p>
+        </div>
       </div>
     );
   }

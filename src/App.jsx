@@ -11,9 +11,9 @@ import TrainerSelection from './Pages/TrainerSelection';
 import TrainerDashboard from './Pages/TrainerDashboard';
 import Guidance from './Pages/Guidance';
 import NotFound from './Pages/NotFound';
-import LoadingSpinner from './Components/LoadingSpinner';
-import ProtectedRoute from './Components/ProtectedRoute';
-import Navbar from './Components/Navbar';
+import LoadingSpinner from './components/loadingSpinner';
+import ProtectedRoute from './components/protectedRoute';
+import Navbar from './components/navbar';
 import useAuth from './hooks/useAuth';
 
 function App() {
