@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './pages/Login';
+import Login from './Pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
@@ -7,7 +7,7 @@ import Meals from './pages/Meals';
 import SimpleMeals from './pages/SimpleMeals';
 import Workouts from './pages/Workouts';
 import Progress from './pages/Progress';
-import TrainerSelection from './pages/TrainerSelection';
+import TrainerSelection from './Pages/TrainerSelection';
 import TrainerDashboard from './pages/TrainerDashboard';
 import Guidance from './pages/Guidance';
 import NotFound from './pages/NotFound';
