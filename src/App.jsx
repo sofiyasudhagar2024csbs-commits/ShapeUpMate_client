@@ -1,19 +1,19 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Meals from './pages/Meals';
-import SimpleMeals from './pages/SimpleMeals';
-import Workouts from './pages/Workouts';
-import Progress from './pages/Progress';
+import Home from './Pages/Home';
+import Profile from './Pages/Profile';
+import Meals from './Pages/Meals';
+import SimpleMeals from './Pages/SimpleMeals';
+import Workouts from './Pages/Workouts';
+import Progress from './Pages/Progress';
 import TrainerSelection from './Pages/TrainerSelection';
-import TrainerDashboard from './pages/TrainerDashboard';
-import Guidance from './pages/Guidance';
-import NotFound from './pages/NotFound';
-import LoadingSpinner from './components/LoadingSpinner';
-import ProtectedRoute from './components/ProtectedRoute';
-import Navbar from './components/Navbar';
+import TrainerDashboard from './Pages/TrainerDashboard';
+import Guidance from './Pages/Guidance';
+import NotFound from './Pages/NotFound';
+import LoadingSpinner from './Components/LoadingSpinner';
+import ProtectedRoute from './Components/ProtectedRoute';
+import Navbar from './Components/Navbar';
 import useAuth from './hooks/useAuth';
 
 function App() {
