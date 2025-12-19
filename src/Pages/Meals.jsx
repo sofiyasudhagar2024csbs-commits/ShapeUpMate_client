@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import MealForm from '../components/MealForm';
-import MealTypeSection from '../components/MealTypeSection';
-import ProgressBar from '../components/ProgressBar';
-import Toast from '../components/Toast';
-import DateTimeHeader from '../components/DateTimeHeader';
-import WeekNavigation from '../components/WeekNavigation';
+import MealForm from '../Components/MealForm';
+import MealTypeSection from '../Components/MealTypeSection';
+import ProgressBar from '../Components/ProgressBar';
+import Toast from '../Components/Toast';
+import DateTimeHeader from '../Components/DateTimeHeader';
+import WeekNavigation from '../Components/WeekNavigation';
 import { meals } from '../services/api';
 
 const Meals = ({ user }) => {
@@ -25,7 +25,7 @@ const Meals = ({ user }) => {
         setMealList(demoMeals);
         return;
       }
-      
+
       const response = await meals.getAll();
       setMealList(response.data);
     } catch (error) {
@@ -50,7 +50,7 @@ const Meals = ({ user }) => {
         showToast('Meal added successfully', 'success');
         return;
       }
-      
+
       await meals.create(mealData);
       fetchMeals();
       showToast('Meal added successfully', 'success');
@@ -70,7 +70,7 @@ const Meals = ({ user }) => {
         showToast('Meal removed', 'success');
         return;
       }
-      
+
       await meals.delete(id);
       fetchMeals();
       showToast('Meal removed', 'success');
@@ -112,16 +112,16 @@ const Meals = ({ user }) => {
 
   return (
     <div className="container">
-      <DateTimeHeader 
-        selectedDate={selectedDate} 
-        onDateChange={setSelectedDate} 
+      <DateTimeHeader
+        selectedDate={selectedDate}
+        onDateChange={setSelectedDate}
       />
-      
-      <WeekNavigation 
-        currentWeek={currentWeek} 
-        onWeekChange={setCurrentWeek} 
+
+      <WeekNavigation
+        currentWeek={currentWeek}
+        onWeekChange={setCurrentWeek}
       />
-      
+
       <div className="section-header">
         <div className="icon icon-success">M</div>
         <div>
@@ -136,13 +136,13 @@ const Meals = ({ user }) => {
           <h3 className="card-title">Daily Summary</h3>
           <p className="card-subtitle">Your nutrition overview for today</p>
         </div>
-        
-        <ProgressBar 
-          current={totalCalories} 
-          goal={goalCalories} 
-          label="Daily Calorie Target" 
+
+        <ProgressBar
+          current={totalCalories}
+          goal={goalCalories}
+          label="Daily Calorie Target"
         />
-        
+
         <div className="meal-summary-grid" style={{ marginTop: '2rem' }}>
           {getMealSummary().map(summary => (
             <div key={summary.type} className="meal-summary-card">
@@ -157,7 +157,7 @@ const Meals = ({ user }) => {
             </div>
           ))}
         </div>
-        
+
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
           <span className={`badge ${totalCalories <= goalCalories ? 'badge-success' : 'badge-warning'}`}>
             {totalCalories <= goalCalories ? `${goalCalories - totalCalories} remaining` : `${totalCalories - goalCalories} over target`}
@@ -173,33 +173,33 @@ const Meals = ({ user }) => {
 
       {/* Meals by Type */}
       <div style={{ display: 'grid', gap: '1.5rem' }}>
-        <MealTypeSection 
-          mealType="breakfast" 
-          meals={mealList} 
-          onDeleteMeal={handleDeleteMeal} 
+        <MealTypeSection
+          mealType="breakfast"
+          meals={mealList}
+          onDeleteMeal={handleDeleteMeal}
         />
-        <MealTypeSection 
-          mealType="lunch" 
-          meals={mealList} 
-          onDeleteMeal={handleDeleteMeal} 
+        <MealTypeSection
+          mealType="lunch"
+          meals={mealList}
+          onDeleteMeal={handleDeleteMeal}
         />
-        <MealTypeSection 
-          mealType="dinner" 
-          meals={mealList} 
-          onDeleteMeal={handleDeleteMeal} 
+        <MealTypeSection
+          mealType="dinner"
+          meals={mealList}
+          onDeleteMeal={handleDeleteMeal}
         />
-        <MealTypeSection 
-          mealType="snacks" 
-          meals={mealList} 
-          onDeleteMeal={handleDeleteMeal} 
+        <MealTypeSection
+          mealType="snacks"
+          meals={mealList}
+          onDeleteMeal={handleDeleteMeal}
         />
       </div>
 
       {toast && (
-        <Toast 
-          message={toast.message} 
-          type={toast.type} 
-          onClose={() => setToast(null)} 
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
         />
       )}
     </div>

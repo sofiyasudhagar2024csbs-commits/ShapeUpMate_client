@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import MealForm from '../components/MealForm';
-import MealList from '../components/MealList';
-import StatsCard from '../components/StatsCard';
-import ProgressBar from '../components/ProgressBar';
-import Toast from '../components/Toast';
+import Navbar from '../Components/Navbar';
+import MealForm from '../Components/MealForm';
+import MealList from '../Components/MealList';
+import StatsCard from '../Components/StatsCard';
+import ProgressBar from '../Components/ProgressBar';
+import Toast from '../Components/Toast';
 import { meals } from '../services/api';
 
 const Dashboard = ({ user, onLogout }) => {
@@ -30,7 +30,7 @@ const Dashboard = ({ user, onLogout }) => {
         setMealList(demoMeals);
         return;
       }
-      
+
       const response = await meals.getAll();
       setMealList(response.data);
     } catch (error) {
@@ -56,7 +56,7 @@ const Dashboard = ({ user, onLogout }) => {
         showToast('Meal added successfully!', 'success');
         return;
       }
-      
+
       await meals.create(mealData);
       fetchMeals();
       showToast('Meal added successfully!', 'success');
@@ -77,7 +77,7 @@ const Dashboard = ({ user, onLogout }) => {
         showToast('Meal removed', 'success');
         return;
       }
-      
+
       await meals.delete(id);
       fetchMeals();
       showToast('Meal removed', 'success');
@@ -100,14 +100,14 @@ const Dashboard = ({ user, onLogout }) => {
   return (
     <div className="container">
       <Navbar user={user} onLogout={onLogout} />
-      
+
       {/* Welcome Section */}
       <div className="card fade-in" style={{ marginBottom: '2rem' }}>
         <h2 style={{ marginBottom: '1rem' }}>Welcome back, {user.name}! 👋</h2>
-        <ProgressBar 
-          current={totalCalories} 
-          goal={goalCalories} 
-          label="Daily Calorie Progress" 
+        <ProgressBar
+          current={totalCalories}
+          goal={goalCalories}
+          label="Daily Calorie Progress"
         />
         <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <span className={`badge ${remainingCalories > 0 ? 'badge-success' : 'badge-warning'}`}>
@@ -118,30 +118,30 @@ const Dashboard = ({ user, onLogout }) => {
           </span>
         </div>
       </div>
-      
+
       {/* Enhanced Stats Overview */}
       <div className="stats-grid">
-        <StatsCard 
-          number={totalCalories} 
-          label="Calories Today" 
+        <StatsCard
+          number={totalCalories}
+          label="Calories Today"
           icon="🔥"
           color="#667eea"
         />
-        <StatsCard 
-          number={goalCalories} 
-          label="Daily Goal" 
+        <StatsCard
+          number={goalCalories}
+          label="Daily Goal"
           icon="🎯"
           color="#48bb78"
         />
-        <StatsCard 
-          number={remainingCalories} 
-          label="Remaining" 
+        <StatsCard
+          number={remainingCalories}
+          label="Remaining"
           icon="⚡"
           color={remainingCalories > 0 ? '#48bb78' : '#e53e3e'}
         />
-        <StatsCard 
-          number={mealList.length} 
-          label="Meals Logged" 
+        <StatsCard
+          number={mealList.length}
+          label="Meals Logged"
           icon="🍽️"
           color="#ed8936"
         />
@@ -155,10 +155,10 @@ const Dashboard = ({ user, onLogout }) => {
 
       {/* Toast Notifications */}
       {toast && (
-        <Toast 
-          message={toast.message} 
-          type={toast.type} 
-          onClose={() => setToast(null)} 
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
         />
       )}
     </div>
